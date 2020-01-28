@@ -89,62 +89,67 @@ public class ControlFlowExercises {
 
         //**************** Display a table of powers. **************//
         Scanner scanner = new Scanner(System.in);
-//        int i = 0;
-//        while(i != -1){
-//            System.out.print("enter an interger: ");
-//            i = scanner.nextInt();
-//            System.out.println("\nThe number is " + i + ".\n");
-//        }
-
-//        Scanner input = new Scanner(System.in);
-//        //this goes into loop
-//        System.out.print("Enter an integer: ");
-//        int number = input.nextInt();
-//        System.out.println("You entered " + number);
-
-
-//        int startValue = 5;
-//        for(int row = 0; row < 5; row++){
-//            int y = 1;
-//            for(int col = number; col < number + 3; col++){
-//                y = y * number;
-//                System.out.print(y + " ");
+//        int i;
+//        String userInput;
+//        int baseInt;
+//        int maxInt;
+//        do{
+//            System.out.println("Enter an integer: ");
+//            baseInt = scanner.nextInt();
+//            System.out.println("What number would you like to go up to?");
+//            maxInt = scanner.nextInt();
+//            System.out.print("number | squared | cubed\n" + "------ | ------ | ------\n");
+//            for(i = baseInt; i <=maxInt; i++){
+//                System.out.print(i + "      |" + (i * i) +"      |" +(i*i*i) + "\n");
 //            }
-//            System.out.println();
-//            number++;
-//            //this exits outside of loop
-//            System.out.print("Do you want to Continue?");
-//            String response = input.nextLine();
-//        }
-
-//        int product = 1, count = 0;
-//        System.out.println("This program will generate a table of powers of a number.");
-//        System.out.println("You just have to tell me what number: \n\n");
-//        System.out.print("Enter an integer please: ");
-//        int MyNum = Fred.nextInt();
-//        while (count < 15)
-//        product = product * MyNum;
-//        System.out.print(product);
-//        System.out.println("Bye for now...");
-
+//            System.out.println("\nWould you like to continue? [yes/no]");
+//            userInput = scanner.next();
+//            i++;
+//        }while(userInput.equals("yes"));
 //
-        int i;
-        String userInput;
-        int baseInt;
-        int maxInt;
-        do{
-            System.out.println("Enter an integer: ");
-            baseInt = scanner.nextInt();
-            System.out.println("What number would you like to go up to?");
-            maxInt = scanner.nextInt();
-            System.out.print("number | squared | cubed\n" + "------ | ------ | ------\n");
-            for(i = baseInt; i <=maxInt; i++){
-                System.out.print(i + " |" + (i * i) +" |" +(i*i*i) + "\n");
+
+
+        //**************** Convert given number grades into letter grades. **************//
+        boolean Continue = true;
+    do {
+            int x = 0;
+            System.out.print("What is the students grade: ");
+            x = scanner.nextInt();
+            if(x > 100 || x < 0){
+                System.out.println("Please put in a percent form 0 - 100!\n");
+            }while(x > 100 || x < 0){
+                System.out.print("What is the percentage of the student: ");
+                x = scanner.nextInt();
+                if(x > 100 || x < 0){
+                    System.out.println("Please put in a percent form 0 100!\n");
+                }
             }
-            System.out.println("\nWould you like to continue? [yes/no]");
-            userInput = scanner.next();
-            i++;
-        }while(userInput.equals("yes"));
+            if(x <= 100 && x >= 88){
+                System.out.print("A");
+            }
+             else if(x <= 87 && x >= 80) {
+                System.out.print("B");
+            }
+             else if(x <= 79 && x >= 67) {
+                System.out.print("C");
+            }
+            else if(x <= 66 && x >= 60) {
+                System.out.print("D");
+            }
+            else if(x <= 59 && x >= 0) {
+                System.out.print("F");
+            }
+            System.out.println("\n" + "Do you want to continue? [Yes/No]");
+            String Continue_Confirm = scanner.next();
+            if(Continue_Confirm.equalsIgnoreCase("Yes")){
+                Continue = true;
+            }else{Continue = false;}
+
+      }while(Continue);
+
+
+
+
 
 
 
