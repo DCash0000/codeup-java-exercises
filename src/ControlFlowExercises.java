@@ -124,21 +124,54 @@ public class ControlFlowExercises {
                     System.out.println("Please put in a percent form 0 100!\n");
                 }
             }
-            if(x <= 100 && x >= 88){
+            if(x <= 100 && x >= 97.5){
+                System.out.print("A+");
+            }
+            else if(x <= 97.5 && x >= 92.5){
                 System.out.print("A");
             }
-             else if(x <= 87 && x >= 80) {
+            else if(x <= 92.4 && x >= 89.5){
+                System.out.print("A-");
+            }
+            else if(x <= 89.4 && x >= 87.5){
+                System.out.print("B+");
+            }
+            else if(x <= 87.4 && x >= 87.4){
                 System.out.print("B");
             }
-             else if(x <= 79 && x >= 67) {
-                System.out.print("C");
+            else if(x <= 82.4 && x >= 79.5){
+                System.out.print("B-");
             }
-            else if(x <= 66 && x >= 60) {
+            else if(x <= 79.4 && x >= 77.5){
+                System.out.print("C+");
+            }
+            else if(x <= 77.4 && x >= 72.5){
+                System.out.print("C-");
+            }
+            else if(x <= 69.4 && x >= 67.5){
+                System.out.print("D+");
+            }
+            else if(x <= 67.4 && x >= 62.5){
                 System.out.print("D");
             }
-            else if(x <= 59 && x >= 0) {
-                System.out.print("F");
+            else if(x <= 62.4 && x >= 59.5){
+                System.out.print("D-");
             }
+//            else if(x <= 59.4 && x > 0){
+//                System.out.print("F");
+//            }
+//             else if(x <= 87 && x >= 80) {
+//                System.out.print("B");
+//            }
+//             else if(x <= 79 && x >= 67) {
+//                System.out.print("C");
+//            }
+//            else if(x <= 66 && x >= 60) {
+//                System.out.print("D");
+//            }
+//            else if(x <= 59 && x >= 0) {
+//                System.out.print("F");
+//            }
             System.out.println("\n" + "Do you want to continue? [Yes/No]");
             String Continue_Confirm = scanner.next();
             if(Continue_Confirm.equalsIgnoreCase("Yes")){
