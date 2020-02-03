@@ -1,4 +1,8 @@
 public class Person {
+    public Person() {
+
+    }
+
     public static void main(String[] args){
         Person a = new Person("Elmo" + "\n");
         a.sayHello();
@@ -7,7 +11,7 @@ public class Person {
 //        Person person2 = new Person("John");
 //        System.out.println("\n" + person1.getName().equals(person2.getName()));
 //        System.out.println(person1 == person2);
-
+//
 //        Person person1 = new Person("John");
 //        Person person2 = person1;
 //        System.out.println(person1 == person2);
@@ -19,7 +23,7 @@ public class Person {
 //        person2.setName("Jane");
 //        System.out.println(person1.getName());
 //        System.out.println(person2.getName());
-
+//
 
         //*********** Step 2 End ***********//
 
@@ -29,19 +33,28 @@ public class Person {
     //******* Step 1 Start *******//
     private String name;
 
+    @Override
+    public String toString() {
+        String output = "";
+        output += name;
+
+        return output;
+    }
+
     public Person(String name){
 //        this.name = name;
         this.setName(name);
     }
 
     //return the persons name
-    public String getName(){
+    public String getName()
+    {
         return this.name;
     }
 
-
     //changes the name property to the passed value
     public void setName(String name){
+
         this.name = name;
     }
 
@@ -49,6 +62,7 @@ public class Person {
 
     //prints a message to the console using the persons name
     public void sayHello(){
+
         System.out.printf("Hello, my name is %s", this.name);
     }
     //********** Step 1 End ***********//

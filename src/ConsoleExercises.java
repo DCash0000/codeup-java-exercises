@@ -1,11 +1,11 @@
 ////package com.codeup.java01ex.console;
-//import java.util.Scanner;
-//public class ConsoleExercises {
-//    public static void main(String[] args) {
-//        double pi = 3.14159;
-//        //Copy this code into your main method//
-////        System.out.printf("The value of pi is approximately %f.\n\n", pi);
-//
+import java.util.Scanner;
+public class ConsoleExercises {
+    public static void main(String[] args) {
+        double pi = 3.14159;
+        //Copy this code into your main method//
+        System.out.printf("The value of pi is approximately %f.\n\n", pi);
+
 //
 //        //Prompt a user to enter a integer and store that value in an int variable using the nextInt method.//
 //        Scanner scanner = new Scanner(System.in);
@@ -35,8 +35,8 @@
 //
 //        //Rewrite the above example using the nextLine method.//
 //        System.out.print("\nEnter a sentence: ");
-//        String sentence = scanner.nextLine();
-//        System.out.printf("\nThe sentence is \"%s\"\n", sentence);
+//        String sentence1 = scanner.nextLine();
+//        System.out.printf("\nThe sentence is \"%s\"\n", sentence1);
 //
 //
 //        //Prompt the user to enter values of length and width of a classroom at Codeup.//
@@ -48,8 +48,8 @@
 //        String sLength = scan.nextLine();
 //        double length = Double.parseDouble(sLength);
 //        System.out.printf("The dimensions are %f. the perimeter is %f and the area is %f. \n", length, width, 2*(length+width), length*width);
-//
-//
+
+
 //        Bonuses//
 //        scanner.useDelimiter("\n");
 //        System.out.print("\nHey! Yo, enter the width: ");
@@ -57,9 +57,9 @@
 //        System.out.print("enter the length: ");
 //        double length = scanner.nextFloat();
 //        System.out.printf("the dimensions are %f. the perimeter is %f and the area is %f.\n", length, width, 2*(length+width), length*width);
-//
-//
-//    }
 
 
-//}
+    }
+
+
+}

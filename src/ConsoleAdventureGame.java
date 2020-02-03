@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Random;
 public class ConsoleAdventureGame {
     public static void main(String[] args) {
         start();
