@@ -9,6 +9,7 @@ public class MoviesApplication {
         Movie[] movieList = MoviesArray.findAll();
 
 
+
         int choice = 1;
         do{
             System.out.println();

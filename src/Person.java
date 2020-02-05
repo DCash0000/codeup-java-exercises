@@ -7,7 +7,7 @@ public class Person {
         Person a = new Person("Elmo" + "\n");
         a.sayHello();
         //*********** Step 2 Start ***********//
-//        Person person1 = new Person("John");
+        Person person1 = new Person("John");
 //        Person person2 = new Person("John");
 //        System.out.println("\n" + person1.getName().equals(person2.getName()));
 //        System.out.println(person1 == person2);
