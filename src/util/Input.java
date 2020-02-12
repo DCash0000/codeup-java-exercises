@@ -1,4 +1,6 @@
 package util;
+import java.nio.channels.ScatteringByteChannel;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Input{
     private Scanner scanner;
@@ -8,61 +10,114 @@ public class Input{
 //        System.out.println(input.getInt(5, 10));
 //        System.out.println(input.getInt());
 //        System.out.println(input.getDouble(5, 10));
-        System.out.println(input.getDouble());
-
+//        System.out.println(input.getDouble());
+//        System.out.println(getInt());
+//        System.out.println(input.getAnInteger());
+        System.out.println(input.getADouble());
     }
 
     public Input(){
         this.scanner = new Scanner(System.in);
+
+
     }
 
-    public String getString(){
-        String answer;
-        System.out.println("Enter string: ");
-        answer = this.scanner.nextLine();
-        return answer;
-    }
-
-    public boolean yesNo(){
-        String answer;
-        System.out.println("[Yes/No]");
-        answer = this.scanner.nextLine();
-        return(answer.equalsIgnoreCase("Yes") || answer.startsWith("y") || answer.startsWith("Y"));
-        }
-
-   public int getInt(int min, int max){
-        int answer;
-       do{
-           System.out.println("Enter a integer between: " + min + " and "  + max);
-           answer = this.scanner.nextInt();
-       } while(answer > max || answer < min);
-       return(answer);
-
-        }
-
-   public int getInt(){
-        int answer;
-       System.out.println("Enter integer: ");
-       answer = this.scanner.nextInt();
-       return answer;
-   }
-
-   public double getDouble(double min, double max){
-        double answer;
+    public  int getAnInteger() {
+        int userInput = 0;
+        boolean error = true;
         do{
-            System.out.println("Enter a double between: " + min + " and " + max);
-            answer = this.scanner.nextDouble();
-        }while(answer > max || answer < min);
-        return (answer);
-   }
+            try {
+                System.out.println("\n" + "Enter an integer: ");
+                userInput = Integer.valueOf(this.scanner.next());
+                error = false;
+                System.out.println("You entered: " + userInput);
+            } catch (NumberFormatException e) {
+                System.out.print("That's not integer.");
+            }
+        }while(error);
+        return userInput;
+    }
 
 
-   public double getDouble(){
-        double answer;
-       System.out.println("Enter a double: ");
-       answer = this.scanner.nextDouble();
-       return answer;
-   }
+    public double getADouble(){
+        double userInput = 0;
+        boolean error = true;
+        do{
+            try{
+                System.out.println("\n" + "Enter a double: ");
+                userInput = Double.valueOf(this.scanner.next());
+                error = false;
+                System.out.println("You entered: " + userInput);
+            }catch(NumberFormatException e){
+                System.out.println("That's not a double.");
+            }
+        }while(error);
+        return (double) userInput;
+    }
+
+
+//    public double getDouble(){
+//        double answer;
+//        System.out.println("Enter a double: ");
+//        answer = this.scanner.nextDouble();
+//        return answer;
+//    }
+
+
+//    public int getInt(){
+//        int answer;
+//        System.out.println("Enter integer: ");
+//        answer = this.scanner.nextInt();
+//        return answer;
+//    }
+//
+//    public double getDouble(){
+//        double answer;
+//        System.out.println("Enter a double: ");
+//        answer = this.scanner.nextDouble();
+//        return answer;
+//    }
+
+//    public String getString(){
+//        String answer;
+//        System.out.println("Enter string: ");
+//        answer = this.scanner.nextLine();
+//        return answer;
+//    }
+
+//    public boolean yesNo(){
+//        String answer;
+//        System.out.println("[Yes/No]");
+//        answer = this.scanner.nextLine();
+//        return(answer.equalsIgnoreCase("Yes") || answer.startsWith("y") || answer.startsWith("Y"));
+//        }
+
+//   public int getInt(int min, int max){
+//        int answer;
+//       do{
+//           System.out.println("Enter a integer between: " + min + " and "  + max);
+//           answer = this.scanner.nextInt();
+//       } while(answer > max || answer < min);
+//       return(answer);
+//
+//        }
+
+
+
+//   public double getDouble(double min, double max){
+//        double answer;
+//        do{
+//            System.out.println("Enter a double between: " + min + " and " + max);
+//            answer = this.scanner.nextDouble();
+//        }while(answer > max || answer < min);
+//        return (answer);
+//   }
+
+
+
+
+
+
 
 
 
@@ -97,99 +152,6 @@ public class Input{
 
 
 
-//public class Input {
-//    private  Scanner scanner;
-//
-//    public static void main(String[] args) {
-//        Input input = new Input();
-//        input.getString();
-//        input.yesNo();
-//        input.getInt(5, 60);
-//        input.getInt();
-//        input.getDouble(5, 7);
-//        input.getDouble();
-//    }
-//
-//    public Input(){
-//        this.scanner = new Scanner(System.in);
-//    }
-//
-//
-//
-//
-//    //************* Get String Method
-//    public String getString(){
-//        String answer;
-//        System.out.println("Enter a string: ");
-//        answer = this.scanner.next();
-//        return answer;
-//    }
-//
-//
-//
-//
-//    //************* Yes No Method
-//    public boolean yesNo(){
-//        String answer;
-//        System.out.println("What is your answer? [yes/no]");
-//        answer = this.scanner.next();
-//        return answer.toLowerCase().startsWith("y");
-//    }
-//
-//
-//
-//
-//
-//    //************* Get Int Min and Max Method
-//    public int getInt(int min, int max){
-//        int answer;
-//        do{
-//            System.out.println("Enter an integer between " + min +" and " + max + ": ");
-//            answer = this.scanner.nextInt();
-//        }while(answer < min || answer > max);
-//        return answer;
-//    }
-//
-//
-//
-//
-//    //************* Get Int Method
-//    public int getInt(){
-//        int answer;
-//        System.out.println("Enter a number: ");
-//        answer = this.scanner.nextInt();
-//        return answer;
-//    }
-//
-//
-//
-//
-//    //************* Get Double Min and Max Method
-//    public double getDouble(double min, double max){
-//        double answer;
-//        do{
-//            System.out.println("Enter a double: ");
-//            answer = this.scanner.nextDouble();
-//        }while(answer < min || answer > max);
-//        return answer;
-//    }
-//
-//
-//    public double getDouble() {
-//
-//        return getDouble("Enter a double:");
-//    }
-//
-//
-//
-//    //************* Get Double Method
-//    public double getDouble(String prompt){
-//        double answer;
-//        System.out.println(prompt);
-//        answer = this.scanner.nextDouble();
-//        return answer;
-//    }
-//}
 
 
 
